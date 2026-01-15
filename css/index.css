@@ -51,6 +51,30 @@ section {
   margin: 24px 0;
 }
 
+/* Carrusel pequeño (uso en sección Piscina) */
+.carousel-container.small {
+  max-height: 360px;
+  background: transparent;
+}
+
+.carousel-container.small .carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+.carousel-container.small .carousel-button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background: rgba(0,0,0,0.45);
+}
+
+.carousel-container.small .carousel-indicators {
+  bottom: 8px;
+}
+
 .carousel {
   position: relative;
   width: 100%;
