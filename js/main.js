@@ -16,102 +16,95 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initCarousel() {
-  const carousel = document.querySelector('.carousel');
-  if (!carousel) return;
-  
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const prevBtn = carousel.parentElement.querySelector('.carousel-button.prev');
-  const nextBtn = carousel.parentElement.querySelector('.carousel-button.next');
-  const indicators = carousel.parentElement.querySelectorAll('.indicator');
-  
-  if (slides.length === 0) return;
-  
-  let currentSlide = 0;
-  let autoplayInterval;
-  
-  // Mostrar diapositiva
-  function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(ind => ind.classList.remove('active'));
-    
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    if (indicators[currentSlide]) {
-      indicators[currentSlide].classList.add('active');
+  const carousels = document.querySelectorAll('.carousel');
+  if (!carousels || carousels.length === 0) return;
+
+  carousels.forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.parentElement.querySelector('.carousel-button.prev');
+    const nextBtn = carousel.parentElement.querySelector('.carousel-button.next');
+    const indicators = carousel.parentElement.querySelectorAll('.indicator');
+
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    let autoplayInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(ind => ind.classList.remove('active'));
+
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      if (indicators[currentSlide]) {
+        indicators[currentSlide].classList.add('active');
+      }
     }
-  }
-  
-  // Botones de navegación
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      showSlide(currentSlide - 1);
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+        resetAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+        resetAutoplay();
+      });
+    }
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoplay();
+      });
+    });
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
+    }
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
       resetAutoplay();
     });
-  }
-  
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      showSlide(currentSlide + 1);
-      resetAutoplay();
-    });
-  }
-  
-  // Indicadores
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      showSlide(index);
-      resetAutoplay();
-    });
-  });
-  
-  // Autoplay
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000);
-  }
-  
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        showSlide(currentSlide + 1);
+      }
+      if (touchEndX > touchStartX + 50) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    // Iniciar
+    showSlide(0);
     startAutoplay();
-  }
-  
-  // Toques para mobile
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  carousel.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-  
-  carousel.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-    resetAutoplay();
-  });
-  
-  function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-      // Deslizar izquierda → siguiente
-      showSlide(currentSlide + 1);
-    }
-    if (touchEndX > touchStartX + 50) {
-      // Deslizar derecha → anterior
-      showSlide(currentSlide - 1);
-    }
-  }
-  
-  // Iniciar
-  showSlide(0);
-  startAutoplay();
-  
-  // Pausar autoplay al pasar el mouse
-  carousel.parentElement.addEventListener('mouseenter', () => {
-    clearInterval(autoplayInterval);
-  });
-  
-  carousel.parentElement.addEventListener('mouseleave', () => {
-    startAutoplay();
+
+    carousel.parentElement.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+
+    carousel.parentElement.addEventListener('mouseleave', () => {
+      startAutoplay();
+    });
   });
 }
 
