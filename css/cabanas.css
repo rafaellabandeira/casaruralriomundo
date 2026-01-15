@@ -162,6 +162,22 @@ iframe {
 .calendar-legend .available { background: #25D366; }
 .calendar-legend .occupied { background: #ff6b6b; }
 
+/* Botones del calendario */
+.cal-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0 4px;
+}
+
+.calendar-header { display:flex; align-items:center; justify-content:space-between; gap:8px }
+.calendar-header .left, .calendar-header .right { display:flex; align-items:center }
+.calendar-month { flex: 1; text-align:center }
+
 /* Contacto */
 .contact-section {
   background: linear-gradient(135deg, var(--color-primary), var(--color-dark));

@@ -154,10 +154,36 @@ function initCalendars() {
 
       const header = document.createElement('div');
       header.className = 'calendar-header';
+
+      const left = document.createElement('div');
+      left.className = 'left';
+      const btnPrevYear = document.createElement('button');
+      btnPrevYear.className = 'cal-btn prev-year';
+      btnPrevYear.innerHTML = '«';
+      const btnPrev = document.createElement('button');
+      btnPrev.className = 'cal-btn prev-month';
+      btnPrev.innerHTML = '‹';
+      left.appendChild(btnPrevYear);
+      left.appendChild(btnPrev);
+
       const title = document.createElement('div');
       title.className = 'calendar-month';
       title.textContent = monthNames[month] + ' ' + year;
+
+      const right = document.createElement('div');
+      right.className = 'right';
+      const btnNext = document.createElement('button');
+      btnNext.className = 'cal-btn next-month';
+      btnNext.innerHTML = '›';
+      const btnNextYear = document.createElement('button');
+      btnNextYear.className = 'cal-btn next-year';
+      btnNextYear.innerHTML = '»';
+      right.appendChild(btnNext);
+      right.appendChild(btnNextYear);
+
+      header.appendChild(left);
       header.appendChild(title);
+      header.appendChild(right);
       el.appendChild(header);
 
       const weekdays = ['Do','Lu','Ma','Mi','Ju','Vi','Sa'];
@@ -193,11 +219,24 @@ function initCalendars() {
       }
 
       el.appendChild(grid);
-
       const legend = document.createElement('p');
       legend.className = 'calendar-legend';
       legend.innerHTML = '<span class="dot available"></span> Disponible &nbsp;&nbsp; <span class="dot occupied"></span> Ocupado';
       el.appendChild(legend);
+
+      // listeners for navigation
+      btnPrev.addEventListener('click', () => {
+        month -= 1;
+        if (month < 0) { month = 11; year -= 1; }
+        render();
+      });
+      btnNext.addEventListener('click', () => {
+        month += 1;
+        if (month > 11) { month = 0; year += 1; }
+        render();
+      });
+      btnPrevYear.addEventListener('click', () => { year -= 1; render(); });
+      btnNextYear.addEventListener('click', () => { year += 1; render(); });
     }
 
     render();
