@@ -1,261 +1,153 @@
-/* Estilos específicos para index.html - Mobile First */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartamentos a Pie de Pistas en Granvalira y Cerler</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-header {
-  padding: 48px var(--spacing-md) !important;
-}
+<header>
+  <div class="header-left">
+    <h1 class="main-title">
+      Apartamentos a Pie de Pistas en Granvalira y Cerler<br>
+      ❄️ Invierno en la nieve | ☀️ Verano con rutas de montaña
+    </h1>
+  </div>
+  <div class="header-right">
+    <a href="tel:+34620419157">📞 620 419 157</a>
+    <a href="https://wa.me/34620419157" target="_blank">💬 WhatsApp</a>
+  </div>
+</header>
 
-section {
-  padding: var(--spacing-lg) var(--spacing-md) !important;
-}
+<main>
 
-.cabanias-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin: 24px 0;
-}
+  <!-- CARRUSEL -->
+  <section class="carousel">
+    <div class="carousel-wrapper">
+      <!-- 30 imágenes -->
+      <div class="carousel-slide active"><img src="img/grandvalira1.jpg" alt="Grandvalira 1"></div>
+      <div class="carousel-slide"><img src="img/grandvalira2.jpg" alt="Grandvalira 2"></div>
+      <div class="carousel-slide"><img src="img/grandvalira3.jpg" alt="Grandvalira 3"></div>
+      <div class="carousel-slide"><img src="img/grandvalira4.jpg" alt="Grandvalira 4"></div>
+      <div class="carousel-slide"><img src="img/grandvalira5.jpg" alt="Grandvalira 5"></div>
+      <div class="carousel-slide"><img src="img/grandvalira6.jpg" alt="Grandvalira 6"></div>
+      <div class="carousel-slide"><img src="img/grandvalira7.jpg" alt="Grandvalira 7"></div>
+      <div class="carousel-slide"><img src="img/grandvalira8.jpg" alt="Grandvalira 8"></div>
+      <div class="carousel-slide"><img src="img/grandvalira9.jpg" alt="Grandvalira 9"></div>
+      <div class="carousel-slide"><img src="img/grandvalira10.jpg" alt="Grandvalira 10"></div>
+      <div class="carousel-slide"><img src="img/pleta1.jpg" alt="Pleta de Soldeu 1"></div>
+      <div class="carousel-slide"><img src="img/pleta2.jpg" alt="Pleta de Soldeu 2"></div>
+      <div class="carousel-slide"><img src="img/pleta3.jpg" alt="Pleta de Soldeu 3"></div>
+      <div class="carousel-slide"><img src="img/pleta4.jpg" alt="Pleta de Soldeu 4"></div>
+      <div class="carousel-slide"><img src="img/pleta5.jpg" alt="Pleta de Soldeu 5"></div>
+      <div class="carousel-slide"><img src="img/pleta6.jpg" alt="Pleta de Soldeu 6"></div>
+      <div class="carousel-slide"><img src="img/cerler1.jpg" alt="Cerler 1"></div>
+      <div class="carousel-slide"><img src="img/cerler2.jpg" alt="Cerler 2"></div>
+      <div class="carousel-slide"><img src="img/cerler3.jpg" alt="Cerler 3"></div>
+      <div class="carousel-slide"><img src="img/cerler4.jpg" alt="Cerler 4"></div>
+      <div class="carousel-slide"><img src="img/cerler5.jpg" alt="Cerler 5"></div>
+      <div class="carousel-slide"><img src="img/cerler6.jpg" alt="Cerler 6"></div>
+      <div class="carousel-slide"><img src="img/cerler7.jpg" alt="Cerler 7"></div>
+      <div class="carousel-slide"><img src="img/cerler8.jpg" alt="Cerler 8"></div>
+      <div class="carousel-slide"><img src="img/cerler9.jpg" alt="Cerler 9"></div>
+      <div class="carousel-slide"><img src="img/cerler10.jpg" alt="Cerler 10"></div>
+      <div class="carousel-slide"><img src="img/cerler11.jpg" alt="Cerler 11"></div>
+      <div class="carousel-slide"><img src="img/cerler12.jpg" alt="Cerler 12"></div>
+      <div class="carousel-slide"><img src="img/cerler13.jpg" alt="Cerler 13"></div>
+      <div class="carousel-slide"><img src="img/cerler14.jpg" alt="Cerler 14"></div>
 
-.cabin-card {
-  background: linear-gradient(135deg, rgba(46, 93, 67, 0.08) 0%, rgba(37, 211, 102, 0.05) 100%);
-  border-radius: 12px;
-  padding: var(--spacing-lg);
-  border-left: 4px solid var(--color-primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-left-color 0.3s ease;
-  box-shadow: 0 2px 8px rgba(46, 93, 67, 0.08);
-}
+      <!-- Botones -->
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
 
-.cabin-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(46, 93, 67, 0.25);
-  background: linear-gradient(135deg, rgba(46, 93, 67, 0.12) 0%, rgba(37, 211, 102, 0.08) 100%);
-  border-left-color: var(--color-secondary);
-}
+  <!-- APARTAMENTOS -->
+  <section id="apartamentos">
+    <h2>Nuestros Apartamentos</h2>
+    <div class="apartamentos-grid">
 
-.cabin-card h3 {
-  margin-top: 0;
-}
+      <!-- Apartamentos Cards -->
+      <!-- Puedes repetir esta tarjeta para los 8 apartamentos -->
+      <div class="apartamento-card">
+        <h3>Apartamento Pleta de Soldeu · Edificio B · B-3-4</h3>
+        <p>Capacidad: 4 personas | Soldeu</p>
+        <p>❄️ A pocos metros de las pistas | Diseño moderno</p>
+        <p>☀️ Punto de partida para multitud de rutas de montaña</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/15004000" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.cabin-card p {
-  font-size: 14px;
-  margin-bottom: 12px;
-}
+      <div class="apartamento-card">
+        <h3>Apartamento Pleta de Soldeu · Edificio C · C-2-1</h3>
+        <p>Capacidad: 5 personas | Vistas a la montaña</p>
+        <p>❄️ Ubicación privilegiada para esquiar</p>
+        <p>☀️ Punto de partida para multitud de rutas de montaña</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/14928857" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-/* Carrusel */
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #000;
-  margin: 24px 0;
-}
+      <div class="apartamento-card">
+        <h3>Apartamento Pleta de Soldeu · Edificio 3 · 3-2-7</h3>
+        <p>Capacidad: 5 personas</p>
+        <p>❄️ Perfecto para grupos de esquí | Terraza, sin vistas</p>
+        <p>☀️ Punto de partida para rutas de montaña</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/16438941" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-/* Carrusel pequeño (uso en sección Piscina) */
-.carousel-container.small {
-  max-height: 360px;
-  background: transparent;
-}
+      <div class="apartamento-card">
+        <h3>Ático Edificio Malva · 7-2</h3>
+        <p>Capacidad: 5 personas | Maravillosas vistas a las pistas</p>
+        <p>❄️ Perfecto para grupos de esquí</p>
+        <p>☀️ Senderos de montaña señalizados en verano</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/30303046" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.carousel-container.small .carousel-slide img {
-  width: 100%;
-  height: auto;
-  max-height: 360px;
-  object-fit: cover;
-}
+      <div class="apartamento-card">
+        <h3>Apartamento Edificio El Tarter · 4-B</h3>
+        <p>Capacidad: 3 personas | Vistas a las pistas</p>
+        <p>☀️ Rutas de montaña y naturaleza en verano</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/4256746" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.carousel-container.small .carousel-button {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  background: rgba(0,0,0,0.45);
-}
+      <div class="apartamento-card">
+        <h3>Apartamento Edificio L’Avet · 2-1</h3>
+        <p>Capacidad: 4 personas | Bonitas vistas a las pistas</p>
+        <p>☀️ Entorno ideal para senderismo estival</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/15831723" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.carousel-container.small .carousel-indicators {
-  bottom: 8px;
-}
+      <div class="apartamento-card">
+        <h3>Chalet Edificio Bellesguard · 1-1</h3>
+        <p>Capacidad: 6 personas | Maravillosas vistas a las pistas</p>
+        <p>☀️ Numerosas rutas de montaña marcadas en verano</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/29563534" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+      <div class="apartamento-card">
+        <h3>Apartamento Edificio Aiguallur Cerler · A-4</h3>
+        <p>Capacidad: 4 personas | Vistas a pistas y al valle de Benasque</p>
+        <p>☀️ Montones de rutas de montaña únicas en verano</p>
+        <p>🔗 <a href="https://www.airbnb.es/rooms/1096091527741897588" target="_blank">Reservar en Airbnb</a></p>
+      </div>
 
-.carousel-slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-  animation: fadeIn 0.5s ease-in-out;
-}
+    </div>
+  </section>
 
-.carousel-slide.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+</main>
 
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+<footer>
+  <p>© 2026 alquilerandorra.es</p>
+  <p>
+    <a href="aviso-legal.html">Aviso Legal</a> |
+    <a href="privacidad.html">Política de Privacidad</a> |
+    <a href="cookies.html">Política de Cookies</a>
+  </p>
+</footer>
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/34620419157" target="_blank" class="whatsapp-float">💬</a>
 
-/* Botones del carrusel */
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  width: 44px;
-  height: 44px;
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-  z-index: 10;
-}
-
-.carousel-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-button.prev {
-  left: 12px;
-}
-
-.carousel-button.next {
-  right: 12px;
-}
-
-/* Indicadores */
-.carousel-indicators {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-
-.indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.indicator.active {
-  background: white;
-  width: 24px;
-  border-radius: 4px;
-}
-
-/* Botones */
-.boton {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #1f4d33 100%);
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 16px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  border: 2px solid var(--color-primary);
-  cursor: pointer;
-}
-
-.boton:hover {
-  background: linear-gradient(135deg, var(--color-dark) 0%, #0f2818 100%);
-  border-color: var(--color-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(46, 93, 67, 0.4);
-  color: white;
-}
-
-.boton:active {
-  transform: translateY(0);
-}
-
-/* Galería de fotos */
-.galeria {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin: 24px 0;
-}
-
-.galeria img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 0;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.02);
-}
-
-/* Imagen de la sección Piscina: evita overflow en móvil y fija ancho máximo */
-.fixed-img {
-  width: 100%;
-  max-width: 640px;
-  height: auto;
-  display: block;
-  margin: 16px auto;
-  object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .fixed-img {
-    max-width: 800px;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  header {
-    padding: 60px 32px !important;
-  }
-
-  section {
-    max-width: 1100px !important;
-    padding: 48px 32px !important;
-  }
-
-  .cabanias-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .carousel-container {
-    max-height: 500px;
-  }
-
-  .galeria {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .galeria {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cabanias-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+<script src="script.js"></script>
+</body>
+</html>
